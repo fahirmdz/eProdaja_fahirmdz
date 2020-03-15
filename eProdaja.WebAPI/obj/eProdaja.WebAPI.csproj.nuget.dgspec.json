@@ -1,34 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\eProdaja\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj": {}
+    "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj": {
+    "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj",
+        "projectUniqueName": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj",
         "projectName": "eProdaja.Model",
-        "projectPath": "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj",
-        "packagesPath": "C:\\Users\\fahir\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\eProdaja\\eProdaja.Model\\obj\\",
+        "projectPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj",
+        "packagesPath": "C:\\Users\\fmdz\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\fahir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fmdz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.2"
+          "netstandard2.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.2": {
+          "netstandard2.0": {
             "projectReferences": {}
           }
         },
@@ -39,17 +39,17 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.2": {
+        "netstandard2.0": {
           "dependencies": {
-            "Microsoft.NETCore.App": {
+            "Microsoft.AspNetCore.Mvc.DataAnnotations": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.2.0, )",
+              "version": "[2.0.3, )",
               "autoReferenced": true
-            },
-            "System.ComponentModel.Annotations": {
-              "target": "Package",
-              "version": "[4.7.0, )"
             }
           },
           "imports": [
@@ -66,20 +66,20 @@
         }
       }
     },
-    "C:\\dev\\eProdaja\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj": {
+    "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\eProdaja\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj",
+        "projectUniqueName": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj",
         "projectName": "eProdaja.WebAPI",
-        "projectPath": "C:\\dev\\eProdaja\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj",
-        "packagesPath": "C:\\Users\\fahir\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\eProdaja\\eProdaja.WebAPI\\obj\\",
+        "projectPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\fmdz\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\fahir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fmdz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,8 +92,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj": {
-                "projectPath": "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj"
+              "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj": {
+                "projectPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj"
               }
             }
           }

@@ -1,8 +1,0 @@
-C:\dev\eProdaja\eProdaja.Model\bin\Debug\netcoreapp2.2\eProdaja.Model.deps.json
-C:\dev\eProdaja\eProdaja.Model\bin\Debug\netcoreapp2.2\eProdaja.Model.dll
-C:\dev\eProdaja\eProdaja.Model\bin\Debug\netcoreapp2.2\eProdaja.Model.pdb
-C:\dev\eProdaja\eProdaja.Model\obj\Debug\netcoreapp2.2\eProdaja.Model.AssemblyInfoInputs.cache
-C:\dev\eProdaja\eProdaja.Model\obj\Debug\netcoreapp2.2\eProdaja.Model.AssemblyInfo.cs
-C:\dev\eProdaja\eProdaja.Model\obj\Debug\netcoreapp2.2\eProdaja.Model.dll
-C:\dev\eProdaja\eProdaja.Model\obj\Debug\netcoreapp2.2\eProdaja.Model.pdb
-C:\dev\eProdaja\eProdaja.Model\obj\Debug\netcoreapp2.2\eProdaja.Model.csprojAssemblyReference.cache

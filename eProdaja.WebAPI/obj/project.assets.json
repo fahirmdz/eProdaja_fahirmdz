@@ -3328,13 +3328,13 @@
           "lib/netstandard1.3/System.Collections.Specialized.dll": {}
         }
       },
-      "System.ComponentModel.Annotations/4.7.0": {
+      "System.ComponentModel.Annotations/4.5.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/System.ComponentModel.Annotations.dll": {}
+          "ref/netcoreapp2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.ComponentModel.Annotations.dll": {}
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "System.Composition/1.0.31": {
@@ -4847,9 +4847,9 @@
       },
       "eProdaja.Model/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
+        "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "System.ComponentModel.Annotations": "4.7.0"
+          "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.2.0"
         },
         "compile": {
           "bin/placeholder/eProdaja.Model.dll": {}
@@ -9000,10 +9000,10 @@
         "system.collections.specialized.nuspec"
       ]
     },
-    "System.ComponentModel.Annotations/4.7.0": {
-      "sha512": "0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
+    "System.ComponentModel.Annotations/4.5.0": {
+      "sha512": "UxYQ3FGUOtzJ7LfSdnYSFd7+oEv6M8NgUatatIN2HxNtDdlcvFAf+VIq4Of9cDMJEJC0aSRv/x898RYhB4Yppg==",
       "type": "package",
-      "path": "system.componentmodel.annotations/4.7.0",
+      "path": "system.componentmodel.annotations/4.5.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -9014,11 +9014,11 @@
         "lib/net45/_._",
         "lib/net461/System.ComponentModel.Annotations.dll",
         "lib/netcore50/System.ComponentModel.Annotations.dll",
+        "lib/netcoreapp2.0/_._",
         "lib/netstandard1.4/System.ComponentModel.Annotations.dll",
         "lib/netstandard2.0/System.ComponentModel.Annotations.dll",
-        "lib/netstandard2.1/System.ComponentModel.Annotations.dll",
-        "lib/netstandard2.1/System.ComponentModel.Annotations.xml",
         "lib/portable-net45+win8/_._",
+        "lib/uap10.0.16299/_._",
         "lib/win8/_._",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
@@ -9040,6 +9040,7 @@
         "ref/netcore50/ru/System.ComponentModel.Annotations.xml",
         "ref/netcore50/zh-hans/System.ComponentModel.Annotations.xml",
         "ref/netcore50/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netcoreapp2.0/_._",
         "ref/netstandard1.1/System.ComponentModel.Annotations.dll",
         "ref/netstandard1.1/System.ComponentModel.Annotations.xml",
         "ref/netstandard1.1/de/System.ComponentModel.Annotations.xml",
@@ -9075,15 +9076,14 @@
         "ref/netstandard1.4/zh-hant/System.ComponentModel.Annotations.xml",
         "ref/netstandard2.0/System.ComponentModel.Annotations.dll",
         "ref/netstandard2.0/System.ComponentModel.Annotations.xml",
-        "ref/netstandard2.1/System.ComponentModel.Annotations.dll",
-        "ref/netstandard2.1/System.ComponentModel.Annotations.xml",
         "ref/portable-net45+win8/_._",
+        "ref/uap10.0.16299/_._",
         "ref/win8/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.componentmodel.annotations.4.7.0.nupkg.sha512",
+        "system.componentmodel.annotations.4.5.0.nupkg.sha512",
         "system.componentmodel.annotations.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -13265,23 +13265,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fahir\\.nuget\\packages\\": {},
+    "C:\\Users\\fmdz\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\eProdaja\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj",
+      "projectUniqueName": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj",
       "projectName": "eProdaja.WebAPI",
-      "projectPath": "C:\\dev\\eProdaja\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj",
-      "packagesPath": "C:\\Users\\fahir\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\eProdaja\\eProdaja.WebAPI\\obj\\",
+      "projectPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\fmdz\\.nuget\\packages\\",
+      "outputPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\fahir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fmdz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13294,8 +13294,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj": {
-              "projectPath": "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj"
+            "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj": {
+              "projectPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj"
             }
           }
         }
