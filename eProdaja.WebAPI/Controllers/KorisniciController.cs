@@ -22,9 +22,9 @@ namespace eProdaja.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IList<Korisnik>> Get()
+        public async Task<IList<Korisnik>> Get([FromQuery]KorisniciSearchRequest request)
         {
-            return await _korisniciService.Get();
+            return await _korisniciService.Get(request);
         }
 
         [HttpPost]

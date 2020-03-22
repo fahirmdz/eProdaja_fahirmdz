@@ -8,7 +8,7 @@ namespace eProdaja.WebAPI.Services
 {
     public interface IKorisniciService
     {
-        Task<IList<Korisnik>> Get();
+        Task<IList<Korisnik>> Get(KorisniciSearchRequest request);
         Task<Korisnik> Insert(KorisniciInsertRequest request);
     }
 }

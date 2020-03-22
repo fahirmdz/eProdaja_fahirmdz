@@ -24,11 +24,20 @@ namespace eProdaja.WebAPI.Services
             _mapper = mapper;
         }
 
-        public async Task<IList<Korisnik>> Get()
+        public async Task<IList<Korisnik>> Get(KorisniciSearchRequest request)
         {
-            return await _dbContext.Korisnici
-                .Select(x => _mapper.Map<Korisnik>(x))
-                .ToListAsync();
+            var korisnici= _dbContext.Korisnici.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(request.Ime))
+            {
+                korisnici = korisnici.Where(x => x.Ime.StartsWith(request.Ime));
+            }
+            if(!string.IsNullOrWhiteSpace(request.Prezime))
+            {
+                korisnici = korisnici.Where(x => x.Prezime.StartsWith(request.Prezime));
+            }
+
+            return await korisnici.Select(x=>_mapper.Map<Korisnik>(x)).ToListAsync();
         }
 
         public async Task<Korisnik> Insert(KorisniciInsertRequest request)

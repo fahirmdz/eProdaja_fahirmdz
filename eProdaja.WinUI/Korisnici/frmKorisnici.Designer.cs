@@ -32,6 +32,8 @@
             this.dgrvKorisnici = new System.Windows.Forms.DataGridView();
             this.btnPrikazi = new System.Windows.Forms.Button();
             this.txtPretragaKorisnika = new System.Windows.Forms.TextBox();
+            this.Status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Korisnici.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrvKorisnici)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +53,9 @@
             this.dgrvKorisnici.AllowUserToAddRows = false;
             this.dgrvKorisnici.AllowUserToDeleteRows = false;
             this.dgrvKorisnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrvKorisnici.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Status,
+            this.Ime});
             this.dgrvKorisnici.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrvKorisnici.Location = new System.Drawing.Point(3, 16);
             this.dgrvKorisnici.Name = "dgrvKorisnici";
@@ -75,6 +80,20 @@
             this.txtPretragaKorisnika.Size = new System.Drawing.Size(370, 20);
             this.txtPretragaKorisnika.TabIndex = 2;
             // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // Ime
+            // 
+            this.Ime.DataPropertyName = "Ime";
+            this.Ime.HeaderText = "Ime";
+            this.Ime.Name = "Ime";
+            this.Ime.ReadOnly = true;
+            // 
             // frmKorisnici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -98,5 +117,7 @@
         private System.Windows.Forms.DataGridView dgrvKorisnici;
         private System.Windows.Forms.Button btnPrikazi;
         private System.Windows.Forms.TextBox txtPretragaKorisnika;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
     }
 }

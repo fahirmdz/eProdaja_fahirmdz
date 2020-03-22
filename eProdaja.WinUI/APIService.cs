@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using eProdaja.Model.Requests;
 using Flurl.Http;
 
 namespace eProdaja.WinUI
@@ -14,10 +15,17 @@ namespace eProdaja.WinUI
         }
 
 
-        public async Task<T> Get<T>()
+        public async Task<T> Get<T>(object search)
         {
-            var result = await $"{Properties.Settings.Default.API}/{_route}".GetJsonAsync<T>();
-            return result;
+            var url =  $"{Properties.Settings.Default.API}/{_route}";
+
+            if (search != null)
+            {
+                url += "?";
+                url += await search.ToQueryString();
+            }
+
+            return await url.GetJsonAsync<T>();
         }
     }
 }

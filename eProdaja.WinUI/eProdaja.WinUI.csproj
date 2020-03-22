@@ -68,6 +68,7 @@
     <Compile Include="Korisnici\frmKorisnici.Designer.cs">
       <DependentUpon>frmKorisnici.cs</DependentUpon>
     </Compile>
+    <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Korisnici\frmKorisnici.resx">

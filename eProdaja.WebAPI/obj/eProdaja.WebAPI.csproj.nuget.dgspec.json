@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj": {}
+    "C:\\dev\\eProdaja\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj": {
+    "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj",
+        "projectUniqueName": "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj",
         "projectName": "eProdaja.Model",
-        "projectPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj",
-        "packagesPath": "C:\\Users\\fmdz\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\obj\\",
+        "projectPath": "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj",
+        "packagesPath": "C:\\Users\\fahir\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\eProdaja\\eProdaja.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\fmdz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fahir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -66,20 +66,20 @@
         }
       }
     },
-    "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj": {
+    "C:\\dev\\eProdaja\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj",
+        "projectUniqueName": "C:\\dev\\eProdaja\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj",
         "projectName": "eProdaja.WebAPI",
-        "projectPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj",
-        "packagesPath": "C:\\Users\\fmdz\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.WebAPI\\obj\\",
+        "projectPath": "C:\\dev\\eProdaja\\eProdaja.WebAPI\\eProdaja.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\fahir\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\eProdaja\\eProdaja.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\fmdz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fahir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,8 +92,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj": {
-                "projectPath": "C:\\dev\\FIT\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj"
+              "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj": {
+                "projectPath": "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj"
               }
             }
           }
