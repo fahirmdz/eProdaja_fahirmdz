@@ -27,10 +27,23 @@ namespace eProdaja.WebAPI.Controllers
             return await _korisniciService.Get(request);
         }
 
+        [HttpGet("{id}")]
+        public async Task<Korisnik> GetById(int id)
+        {
+            return await _korisniciService.GetById(id);
+        }
+
         [HttpPost]
         public async Task<Korisnik> Insert(KorisniciInsertRequest model)
         {
             return await _korisniciService.Insert(model);
+        }
+
+
+        [HttpPut("{id}")]
+        public async Task<Korisnik> Update(int id, KorisniciInsertRequest model)
+        {
+            return await _korisniciService.Update(id,model);
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace eProdaja.WebAPI
@@ -14,11 +15,12 @@ namespace eProdaja.WebAPI
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+
+            Host.CreateDefaultBuilder()
+                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>())
+                .Build().Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+       
     }
 }

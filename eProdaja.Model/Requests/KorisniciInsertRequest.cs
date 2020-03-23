@@ -4,27 +4,27 @@ namespace eProdaja.Model.Requests
 {
     public class KorisniciInsertRequest
     {
-        [Required]
+        [Required(AllowEmptyStrings = false)]
         public string Ime { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = false)]
         public string Prezime { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = false)]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = false)]
         public string Telefon { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = false)]
         [MinLength(4)]
         public string KorisnickoIme { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = false)]
         public string Password { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = false)]
         public string PasswordConfirmation { get; set; }
     }
 }

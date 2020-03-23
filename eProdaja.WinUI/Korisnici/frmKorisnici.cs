@@ -31,5 +31,17 @@ namespace eProdaja.WinUI.Korisnici
             dgrvKorisnici.AutoGenerateColumns = false;
             dgrvKorisnici.DataSource = await _apiService.Get<List<Model.Korisnik>>(search);
         }
+
+        private void dgrvKorisnici_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var id = dgrvKorisnici.SelectedRows[0].Cells[0].Value;
+            var frm = new frmKorisniciDetalji(int.Parse(id.ToString()));
+            frm.Show();
+        }
+
+        private void dgrvKorisnici_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
