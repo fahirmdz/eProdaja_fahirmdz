@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using eProdaja.Model;
 using eProdaja.WebAPI.Database;
 using eProdaja.WebAPI.Services;
 using Microsoft.AspNetCore.Builder;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using VrsteProizvoda = eProdaja.WebAPI.Database.VrsteProizvoda;
 
 namespace eProdaja.WebAPI
 {
@@ -34,6 +36,14 @@ namespace eProdaja.WebAPI
 
             services.AddScoped<IProizvodService, ProizvodService>();
             services.AddScoped<IKorisniciService, KorisniciService>();
+
+            services
+                .AddScoped<IService<Model.JedinicaMjere , object>,
+                    BaseService<Model.JedinicaMjere, object, JediniceMjere>>();
+
+            services
+                .AddScoped<IService<Model.VrsteProizvoda , object>,
+                    BaseService<Model.VrsteProizvoda , object, VrsteProizvoda>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
