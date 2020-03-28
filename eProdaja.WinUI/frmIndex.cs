@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using eProdaja.WinUI.Korisnici;
+using eProdaja.WinUI.Proizvodi;
 
 namespace eProdaja.WinUI
 {
@@ -119,6 +120,12 @@ namespace eProdaja.WinUI
         {
             var frm = new frmKorisniciDetalji();
             frm.Show();
+        }
+
+        private void pretragaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var frmProizvodi=new frmProizvodi();
+            frmProizvodi.Show();
         }
     }
 }

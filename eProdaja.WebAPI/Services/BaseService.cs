@@ -17,12 +17,12 @@ namespace eProdaja.WebAPI.Services
             _mapper = mapper;
         }
 
-        public async Task<List<TModel>> Get(TSearch search)
+        public virtual async Task<List<TModel>> Get(TSearch search)
         {
             return _mapper.Map<List<TModel>>(await _context.Set<TDatabase>().ToListAsync());
         }
 
-        public async Task<TModel> GetById(int id)
+        public virtual async Task<TModel> GetById(int id)
         {
             return _mapper.Map<TModel>(await _context.Set<TDatabase>().FindAsync(id));
         }

@@ -9,9 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace eProdaja.WebAPI.Controllers
 {
-    public class JedinicaMjereController : BaseController<Model.JedinicaMjere,object>
+    public class JediniceMjereController : BaseController<Model.JediniceMjere,object>
     {
-        public JedinicaMjereController(IService<JedinicaMjere, object> service) : base(service)
+        public JediniceMjereController(IService<JediniceMjere, object> service) : base(service)
         {
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace eProdaja.Model
 {
-    public class JedinicaMjere
+    public class JediniceMjere
     {
         public int JedinicaMjereId { get; set; }
         public string Naziv { get; set; }

@@ -1,27 +1,32 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
 using eProdaja.Model;
+using eProdaja.Model.Requests;
+using eProdaja.WebAPI.Database;
+using Microsoft.EntityFrameworkCore;
 
 namespace eProdaja.WebAPI.Services
 {
-    public class ProizvodService: IProizvodService
+    public class ProizvodService : BaseService<Model.Proizvod, ProizvodSearchRequest, Proizvodi>
     {
-        public IList<Proizvod> Get()
+        public ProizvodService(eProdajaContext context, IMapper mapper) : base(context, mapper)
         {
-            var proizvodi = new List<Proizvod>
-            {
-                new Proizvod
-                {
-                    ProizvodId = 1,
-                    Naziv = "Laptop"
-                },
-                new Proizvod
-                {
-                    ProizvodId = 2,
-                    Naziv = "Monitor"
-                }
-            };
+        }
 
-            return proizvodi;
+        public override async Task<List<Proizvod>> Get(ProizvodSearchRequest search)
+        {
+            var query = _context.Set<Proizvodi>().AsQueryable();
+
+            if (search?.VrstaId.HasValue == true)
+            {
+                query = query.Where(x => x.VrstaId == search.VrstaId);
+            }
+
+            query = query.OrderBy(x => x.Naziv);
+
+            return _mapper.Map<List<Model.Proizvod>>(await query.ToListAsync());
         }
     }
 }

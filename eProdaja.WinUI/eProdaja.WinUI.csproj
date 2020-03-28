@@ -155,6 +155,12 @@
     </Compile>
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Proizvodi\frmProizvodi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proizvodi\frmProizvodi.Designer.cs">
+      <DependentUpon>frmProizvodi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmIndex.resx">
       <DependentUpon>frmIndex.cs</DependentUpon>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnici\frmKorisniciDetalji.resx">
       <DependentUpon>frmKorisniciDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proizvodi\frmProizvodi.resx">
+      <DependentUpon>frmProizvodi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -195,5 +204,6 @@
       <Name>eProdaja.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

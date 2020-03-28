@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using eProdaja.Model;
+using eProdaja.Model.Requests;
 using eProdaja.WebAPI.Database;
 using eProdaja.WebAPI.Services;
 using Microsoft.AspNetCore.Builder;
@@ -9,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using JediniceMjere = eProdaja.WebAPI.Database.JediniceMjere;
 using VrsteProizvoda = eProdaja.WebAPI.Database.VrsteProizvoda;
 
 namespace eProdaja.WebAPI
@@ -34,16 +36,19 @@ namespace eProdaja.WebAPI
             services.AddSwaggerGen(x =>
                 x.SwaggerDoc("v1", new OpenApiInfo { Title = "eProdajaAPI", Version = "v1" }));
 
-            services.AddScoped<IProizvodService, ProizvodService>();
             services.AddScoped<IKorisniciService, KorisniciService>();
 
             services
-                .AddScoped<IService<Model.JedinicaMjere , object>,
-                    BaseService<Model.JedinicaMjere, object, JediniceMjere>>();
+                .AddScoped<IService<Model.JediniceMjere , object>,
+                    BaseService<Model.JediniceMjere, object, JediniceMjere>>();
 
             services
                 .AddScoped<IService<Model.VrsteProizvoda , object>,
                     BaseService<Model.VrsteProizvoda , object, VrsteProizvoda>>();
+
+            services
+                .AddScoped<IService<Model.Proizvod, ProizvodSearchRequest>,
+                    ProizvodService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
