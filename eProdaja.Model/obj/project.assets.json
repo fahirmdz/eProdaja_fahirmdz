@@ -1019,24 +1019,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fahir\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\code4success\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj",
+      "projectUniqueName": "C:\\dev\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj",
       "projectName": "eProdaja.Model",
-      "projectPath": "C:\\dev\\eProdaja\\eProdaja.Model\\eProdaja.Model.csproj",
-      "packagesPath": "C:\\Users\\fahir\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\eProdaja\\eProdaja.Model\\obj\\",
+      "projectPath": "C:\\dev\\eProdaja_fahirmdz\\eProdaja.Model\\eProdaja.Model.csproj",
+      "packagesPath": "C:\\Users\\code4success\\.nuget\\packages\\",
+      "outputPath": "C:\\dev\\eProdaja_fahirmdz\\eProdaja.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\fahir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\code4success\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
