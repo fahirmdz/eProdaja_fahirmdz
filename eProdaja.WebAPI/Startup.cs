@@ -47,7 +47,7 @@ namespace eProdaja.WebAPI
                     BaseService<Model.VrsteProizvoda , object, VrsteProizvoda>>();
 
             services
-                .AddScoped<IService<Model.Proizvod, ProizvodSearchRequest>,
+                .AddScoped<ICRUDService<Model.Proizvod, ProizvodSearchRequest,ProizvodUpsertRequest, ProizvodUpsertRequest>,
                     ProizvodService>();
         }
 

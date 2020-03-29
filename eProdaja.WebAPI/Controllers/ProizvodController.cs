@@ -4,9 +4,9 @@ using eProdaja.WebAPI.Services;
 
 namespace eProdaja.WebAPI.Controllers
 {
-    public class ProizvodController : BaseController<Model.Proizvod, ProizvodSearchRequest>
+    public class ProizvodController : BaseCRUDController<Model.Proizvod,ProizvodSearchRequest,ProizvodUpsertRequest,ProizvodUpsertRequest>
     {
-        public ProizvodController(IService<Proizvod, ProizvodSearchRequest> service) : base(service)
+        public ProizvodController(ICRUDService<Proizvod, ProizvodSearchRequest, ProizvodUpsertRequest, ProizvodUpsertRequest> crudService) : base(crudService)
         {
         }
     }

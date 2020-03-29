@@ -18,6 +18,8 @@ namespace eProdaja.WebAPI.Mappers
 
             CreateMap<JediniceMjere, Model.JediniceMjere>().ReverseMap();
             CreateMap<VrsteProizvoda, Model.VrsteProizvoda>().ReverseMap();
+
+            CreateMap<Proizvodi, ProizvodUpsertRequest>().ReverseMap();
         }
     }
 }
