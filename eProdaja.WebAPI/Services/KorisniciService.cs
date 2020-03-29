@@ -1,11 +1,15 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using eProdaja.Model;
 using eProdaja.Model.Requests;
 using eProdaja.WebAPI.Database;
 using eProdaja.WebAPI.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.IO.Enumeration;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace eProdaja.WebAPI.Services
@@ -50,14 +54,26 @@ namespace eProdaja.WebAPI.Services
             if (request.Password != request.PasswordConfirmation)
                 throw new UserException("Passwordi se ne slazu!");
 
-            entity.LozinkaHash = "test";
-            entity.LozinkaSalt = "test";
+            entity.LozinkaSalt = GenerateSalt();
+            entity.LozinkaHash = GenerateHash(entity.LozinkaSalt,request.Password);
+
+            entity.Status = true;
 
             await _dbContext.AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
+            try
+            {
+                await _dbContext.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
 
             return _mapper.Map<Korisnik>(entity);
         }
+
+        
 
         public async Task<Korisnik> Update(int id, KorisniciInsertRequest request)
         {
@@ -82,6 +98,29 @@ namespace eProdaja.WebAPI.Services
             await _dbContext.SaveChangesAsync();
 
             return _mapper.Map<Korisnik>(entity);
+        }
+
+
+        private string GenerateSalt()
+        {
+            var buf = new byte[16];
+            (new RNGCryptoServiceProvider()).GetBytes(buf);
+            return Convert.ToBase64String(buf);
+        }
+
+        private string GenerateHash(string salt, string password)
+        {
+            byte[] src = Convert.FromBase64String(salt);
+            byte[] bytes = Encoding.Unicode.GetBytes(password);
+            byte[] dst= new byte[src.Length+bytes.Length];
+
+            System.Buffer.BlockCopy(src,0,dst,0,src.Length);
+            System.Buffer.BlockCopy(bytes, 0, dst, src.Length, bytes.Length);
+
+            HashAlgorithm algorithm = HashAlgorithm.Create("SHA512");
+            byte[] inArray = algorithm.ComputeHash(dst);
+            return Convert.ToBase64String(inArray);
+
         }
     }
 }

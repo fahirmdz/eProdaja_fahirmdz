@@ -57,6 +57,7 @@ namespace eProdaja.WebAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
 
             app.UseSwagger();

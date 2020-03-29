@@ -36,14 +36,13 @@ namespace eProdaja.WebAPI.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=.;Database=eProdaja;Trusted_Connection=true;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=.;Database=eProdaja;Trusted_Connection=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
-
             modelBuilder.Entity<Dobavljaci>(entity =>
             {
                 entity.HasKey(e => e.DobavljacId);
@@ -185,7 +184,7 @@ namespace eProdaja.WebAPI.Database
 
                 entity.Property(e => e.LozinkaHash)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(100);
 
                 entity.Property(e => e.LozinkaSalt)
                     .IsRequired()
@@ -474,6 +473,10 @@ namespace eProdaja.WebAPI.Database
                     .IsRequired()
                     .HasMaxLength(50);
             });
+
+            OnModelCreatingPartial(modelBuilder);
         }
+
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

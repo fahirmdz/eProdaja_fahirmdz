@@ -83,7 +83,7 @@ namespace eProdaja.WinUI.Proizvodi
                 request.VrstaId = vrstaId;
             }
 
-            var jedinicaMjereIdObj = cmbVrstaProizvoda.SelectedValue;
+            var jedinicaMjereIdObj = cmbJedMjere.SelectedValue;
             if (int.TryParse(jedinicaMjereIdObj.ToString(), out int jedinicaMjereId))
             {
                 request.JedinicaMjereId = jedinicaMjereId;
@@ -91,8 +91,14 @@ namespace eProdaja.WinUI.Proizvodi
 
             request.Naziv = txtNaziv.Text;
             request.Sifra = txtSifra.Text;
+            request.Cijena = decimal.Parse(txtCijena.Text);
 
-            await _proizvodi.Insert<Model.Proizvod>(request);
+            var entity = await _proizvodi.Insert<Model.Proizvod>(request);
+
+            if (entity != null)
+                MessageBox.Show("Uspjesno dodavanje proizvoda");
+
+            cmbJedMjere.SelectedValue = request.JedinicaMjereId;
         }
 
         private void btnDodajSliku_Click(object sender, EventArgs e)
@@ -106,6 +112,7 @@ namespace eProdaja.WinUI.Proizvodi
                 var file = File.ReadAllBytes(fileName);
 
                 request.Slika = file;
+                request.SlikaThumb = file;
 
                 txtSlikaInput.Text = fileName;
 

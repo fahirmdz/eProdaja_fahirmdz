@@ -31,7 +31,6 @@
             this.txtSifra = new System.Windows.Forms.TextBox();
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.txtSlikaInput = new System.Windows.Forms.TextBox();
-            this.txtCijena = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,9 +50,9 @@
             this.VrstaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JedinicaMjereId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Slika = new System.Windows.Forms.DataGridViewImageColumn();
-            this.SlikaThumb = new System.Windows.Forms.DataGridViewImageColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtCijena = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.slikaProizvod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proizvodGrid)).BeginInit();
             this.SuspendLayout();
@@ -78,13 +77,6 @@
             this.txtSlikaInput.Name = "txtSlikaInput";
             this.txtSlikaInput.Size = new System.Drawing.Size(288, 20);
             this.txtSlikaInput.TabIndex = 3;
-            // 
-            // txtCijena
-            // 
-            this.txtCijena.Location = new System.Drawing.Point(133, 142);
-            this.txtCijena.Name = "txtCijena";
-            this.txtCijena.Size = new System.Drawing.Size(100, 20);
-            this.txtCijena.TabIndex = 4;
             // 
             // label1
             // 
@@ -198,9 +190,8 @@
             this.VrstaId,
             this.JedinicaMjereId,
             this.Slika,
-            this.SlikaThumb,
             this.Status});
-            this.proizvodGrid.Location = new System.Drawing.Point(2, 257);
+            this.proizvodGrid.Location = new System.Drawing.Point(1, 257);
             this.proizvodGrid.Name = "proizvodGrid";
             this.proizvodGrid.Size = new System.Drawing.Size(796, 181);
             this.proizvodGrid.TabIndex = 17;
@@ -246,16 +237,7 @@
             this.Slika.DataPropertyName = "Slika";
             this.Slika.HeaderText = "Slika";
             this.Slika.Name = "Slika";
-            this.Slika.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Slika.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // SlikaThumb
-            // 
-            this.SlikaThumb.DataPropertyName = "SlikaThumb";
-            this.SlikaThumb.HeaderText = "SlikaThumb";
-            this.SlikaThumb.Name = "SlikaThumb";
-            this.SlikaThumb.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SlikaThumb.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Status
             // 
@@ -267,11 +249,21 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // txtCijena
+            // 
+            this.txtCijena.Location = new System.Drawing.Point(133, 142);
+            this.txtCijena.Mask = "000.00";
+            this.txtCijena.Name = "txtCijena";
+            this.txtCijena.Size = new System.Drawing.Size(100, 20);
+            this.txtCijena.TabIndex = 18;
+            this.txtCijena.ValidatingType = typeof(int);
+            // 
             // frmProizvodi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtCijena);
             this.Controls.Add(this.proizvodGrid);
             this.Controls.Add(this.btnDodajSliku);
             this.Controls.Add(this.btnSacuvaj);
@@ -284,7 +276,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCijena);
             this.Controls.Add(this.txtSlikaInput);
             this.Controls.Add(this.txtNaziv);
             this.Controls.Add(this.txtSifra);
@@ -302,7 +293,6 @@
         private System.Windows.Forms.TextBox txtSifra;
         private System.Windows.Forms.TextBox txtNaziv;
         private System.Windows.Forms.TextBox txtSlikaInput;
-        private System.Windows.Forms.TextBox txtCijena;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -315,6 +305,7 @@
         private System.Windows.Forms.Button btnSacuvaj;
         private System.Windows.Forms.Button btnDodajSliku;
         private System.Windows.Forms.DataGridView proizvodGrid;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProizvodId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sifra;
@@ -322,8 +313,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VrstaId;
         private System.Windows.Forms.DataGridViewTextBoxColumn JedinicaMjereId;
         private System.Windows.Forms.DataGridViewImageColumn Slika;
-        private System.Windows.Forms.DataGridViewImageColumn SlikaThumb;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.MaskedTextBox txtCijena;
     }
 }
