@@ -1,12 +1,11 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using eProdaja.Model;
 using eProdaja.Model.Requests;
 using eProdaja.WebAPI.Database;
 using eProdaja.WebAPI.Exceptions;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
-using System.IO.Enumeration;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -55,7 +54,7 @@ namespace eProdaja.WebAPI.Services
                 throw new UserException("Passwordi se ne slazu!");
 
             entity.LozinkaSalt = GenerateSalt();
-            entity.LozinkaHash = GenerateHash(entity.LozinkaSalt,request.Password);
+            entity.LozinkaHash = GenerateHash(entity.LozinkaSalt, request.Password);
 
             entity.Status = true;
 
@@ -63,7 +62,6 @@ namespace eProdaja.WebAPI.Services
             try
             {
                 await _dbContext.SaveChangesAsync();
-
             }
             catch (Exception ex)
             {
@@ -72,8 +70,6 @@ namespace eProdaja.WebAPI.Services
 
             return _mapper.Map<Korisnik>(entity);
         }
-
-        
 
         public async Task<Korisnik> Update(int id, KorisniciInsertRequest request)
         {
@@ -93,13 +89,29 @@ namespace eProdaja.WebAPI.Services
                     throw new UserException("Passwordi se ne slazu!");
                 }
             }
-            
+
             _dbContext.Update(entity);
             await _dbContext.SaveChangesAsync();
 
             return _mapper.Map<Korisnik>(entity);
         }
 
+        public async Task<Korisnik> Authenticate(string username, string password)
+        {
+            var user = await _dbContext.Korisnici.FirstOrDefaultAsync(x => x.KorisnickoIme == username);
+
+            if (user == null)
+            {
+                var newHash = GenerateHash(user.LozinkaSalt, password);
+
+                if (newHash == user.LozinkaHash)
+                {
+                    return _mapper.Map<Model.Korisnik>(user);
+                }
+            }
+
+            return null;
+        }
 
         private string GenerateSalt()
         {
@@ -112,15 +124,14 @@ namespace eProdaja.WebAPI.Services
         {
             byte[] src = Convert.FromBase64String(salt);
             byte[] bytes = Encoding.Unicode.GetBytes(password);
-            byte[] dst= new byte[src.Length+bytes.Length];
+            byte[] dst = new byte[src.Length + bytes.Length];
 
-            System.Buffer.BlockCopy(src,0,dst,0,src.Length);
+            System.Buffer.BlockCopy(src, 0, dst, 0, src.Length);
             System.Buffer.BlockCopy(bytes, 0, dst, src.Length, bytes.Length);
 
             HashAlgorithm algorithm = HashAlgorithm.Create("SHA512");
             byte[] inArray = algorithm.ComputeHash(dst);
             return Convert.ToBase64String(inArray);
-
         }
     }
 }

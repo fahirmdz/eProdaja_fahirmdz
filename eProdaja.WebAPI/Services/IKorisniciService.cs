@@ -12,5 +12,6 @@ namespace eProdaja.WebAPI.Services
         Task<Korisnik> GetById(int id);
         Task<Korisnik> Insert(KorisniciInsertRequest request);
         Task<Korisnik> Update(int id, KorisniciInsertRequest request);
+        Task<Model.Korisnik> Authenticate(string username, string password);
     }
 }
